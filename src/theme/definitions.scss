@@ -1,0 +1,37 @@
+//! html pure
+* {
+  box-sizing: border-box !important;
+  color: var(--g-white-o80);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0 !important;
+  margin: 0 !important;
+  font-size: 1rem;
+}
+
+p {
+  margin: 0;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  outline: none;
+}
+
+.container-all {
+  width: 100vw;
+  height: 100vh;
+
+  background-color: var(--b-principal);
+
+  display: flex;
+  justify-content: center;
+}
