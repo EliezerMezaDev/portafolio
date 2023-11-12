@@ -14,6 +14,30 @@
         </h5>
       </div>
 
+      <nav class="navigation">
+        <li
+          class="navigation__item"
+          [ngClass]="{current : navCurrent == 'aboutMe'}"
+          (click)="changeNavCurrent('aboutMe')"
+        >
+          acerca de
+        </li>
+        <li
+          class="navigation__item"
+          [ngClass]="{current : navCurrent == 'experience'}"
+          (click)="changeNavCurrent('experience')"
+        >
+          experiencia
+        </li>
+        <li
+          class="navigation__item"
+          [ngClass]="{current : navCurrent == 'project'}"
+          (click)="changeNavCurrent('project')"
+        >
+          proyectos
+        </li>
+      </nav>
+
       <div class="info__socialbar">
         <button class="info__socialbar__item">
           <ion-icon name="logo-linkedin"></ion-icon>
