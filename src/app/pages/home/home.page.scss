@@ -12,7 +12,7 @@
 
     &__portrait {
       width: 500px;
-      padding: 1rem 1rem 0 1rem;
+      padding: 2rem 1rem 0 1rem;
 
       img {
         width: 300px;
@@ -142,6 +142,289 @@
           width: 2rem;
 
           background-color: var(--g-white-o80);
+        }
+      }
+    }
+  }
+
+  .content {
+    height: 100%;
+
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: var(--b-secondary-o40);
+    }
+
+    .aboutMe,
+    .experience,
+    .projects {
+      min-height: 500px;
+    }
+
+    .aboutMe {
+      padding-top: 5rem;
+
+      p {
+        margin-bottom: 0.75rem;
+
+        font-size: 1.25rem;
+        color: var(--g-white-o40);
+
+        text-align: justify;
+      }
+    }
+
+    .experience {
+      letter-spacing: 0.5px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      &__item {
+        margin-bottom: 1rem;
+        padding: 1.15rem 1rem;
+
+        border: 2px solid transparent;
+        border-radius: 0.5rem;
+
+        transition: 0.3s;
+
+        cursor: pointer;
+
+        display: grid;
+        grid-template-columns: 150px 1fr;
+
+        &__timelapse {
+          font-size: 1rem;
+          color: var(--g-white-o60);
+        }
+
+        &__label {
+          display: flex;
+
+          h4 {
+            margin-bottom: 0.25rem;
+
+            font-size: 1.25rem;
+            color: var(--g-white);
+
+            transition: 0.3s;
+          }
+
+          ion-icon {
+            margin-left: 0.25rem;
+            font-size: 1.15rem;
+
+            color: var(--g-white);
+
+            transition: 0.3s;
+          }
+        }
+
+        &__rol {
+          color: var(--g-white-o60);
+
+          &.main {
+            font-size: 0.85rem;
+          }
+
+          &.secondary {
+            font-size: 0.75rem;
+          }
+
+          &.tertiary {
+            font-size: 0.75rem;
+          }
+        }
+
+        &__description {
+          margin-top: 1rem;
+
+          color: var(--g-white-o80);
+        }
+
+        &__skills {
+          padding: 0.5rem 0;
+
+          display: flex;
+          flex-wrap: wrap;
+
+          .skill {
+            margin-right: 0.25rem;
+            padding: 0.35rem 0.5rem;
+
+            border-radius: 1rem;
+
+            border: 1px solid var(--g-white-o20);
+
+            font-size: 0.75rem;
+          }
+        }
+
+        &__body {
+          display: flex;
+          flex-direction: column;
+        }
+
+        &:hover {
+          border-color: var(--b-secondary-o60);
+
+          background-color: var(--b-secondary-o40);
+
+          .experience__item {
+            &__label {
+              h4 {
+                color: var(--m-principal);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .projects {
+      letter-spacing: 0.5px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      &__item {
+        margin-bottom: 1rem;
+        padding: 1.15rem 1rem;
+
+        border: 2px solid transparent;
+        border-radius: 0.5rem;
+
+        transition: 0.3s;
+
+        cursor: pointer;
+
+        display: grid;
+        grid-template-columns: 150px 1fr;
+
+        &__image {
+          font-size: 1rem;
+          color: var(--g-white-o60);
+
+          display: flex;
+          align-items: flex-start;
+          justify-content: center;
+
+          img {
+            width: 90%;
+
+            border-radius: 5px;
+          }
+        }
+
+        &__label {
+          display: flex;
+
+          h4 {
+            margin-bottom: 0.25rem;
+
+            font-size: 1.25rem;
+            color: var(--g-white);
+
+            transition: 0.3s;
+          }
+
+          ion-icon {
+            margin-left: 0.25rem;
+            font-size: 1.15rem;
+
+            color: var(--g-white);
+
+            transition: 0.3s;
+          }
+        }
+
+        &__description {
+          margin-top: 1rem;
+
+          color: var(--g-white-o80);
+        }
+
+        &__requireds {
+          padding: 0.5rem 0;
+
+          display: flex;
+          flex-wrap: wrap;
+
+          .required {
+            margin-right: 0.25rem;
+            padding: 0.35rem 0.5rem;
+
+            border-radius: 1rem;
+
+            border: 1px solid var(--g-white-o20);
+
+            font-size: 0.75rem;
+          }
+        }
+
+        &__body {
+          display: flex;
+          flex-direction: column;
+        }
+
+        &:hover {
+          border-color: var(--b-secondary-o60);
+
+          background-color: var(--b-secondary-o40);
+
+          .projects__item {
+            &__label {
+              h4 {
+                color: var(--m-principal);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .link {
+      align-self: end;
+      position: relative;
+
+      padding: 0.25rem 0;
+
+      color: var(--g-white-o40);
+
+      transition: 0.3s;
+
+      cursor: pointer;
+
+      display: flex;
+      align-items: center;
+
+      &::before {
+        content: "";
+
+        position: absolute;
+        bottom: -2px;
+
+        width: 0;
+        height: 1px;
+
+        background-color: var(--g-white-o40);
+
+        transition: 0.3s;
+      }
+
+      &:hover {
+        color: var(--g-white-o80);
+
+        &::before {
+          width: 100%;
         }
       }
     }

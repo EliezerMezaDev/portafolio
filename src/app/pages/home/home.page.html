@@ -1,5 +1,5 @@
 <div class="container-all">
-  <main class="container-main">
+  <div class="container-main">
     <aside class="info">
       <picture class="info__portrait">
         <img src="assets/img/me2.jpg" alt="me2.jpg" />
@@ -31,8 +31,8 @@
         </li>
         <li
           class="navigation__item"
-          [ngClass]="{current : navCurrent == 'project'}"
-          (click)="changeNavCurrent('project')"
+          [ngClass]="{current : navCurrent == 'projects'}"
+          (click)="changeNavCurrent('projects')"
         >
           proyectos
         </li>
@@ -48,6 +48,78 @@
       </div>
     </aside>
 
-    <section class="info">info</section>
-  </main>
+    <main class="content" id="contentScroller">
+      <section class="aboutMe" id="aboutMe">
+        <p>
+          <strong> Lorem ipsum dolor sit amet, consectetur adipisicing </strong
+          >elit. Eum, exercitationem nam quasi voluptatum aliquid veritatis?
+        </p>
+        <p>
+          Lorem ipsum dolor, sit
+          <strong>amet consectetur adipisicing elit. Sunt</strong>
+          doloremque nihil ut sequi magni quod harum quisquam ipsum blanditiis
+          assumenda quo saepe, qui consequatur dignissimos quaerat obcaecati
+        </p>
+        <p>
+          impedit molestias reprehenderit voluptate pariatur sint asperiores.
+          Error iusto accusantium excepturi sapiente unde eos earum ullam! Cum,
+          <strong>quasi amet. A dolore numquam distinctio. </strong>
+        </p>
+      </section>
+
+      <section class="experience" id="experience">
+        <article *ngFor="let xp of list.experience" class="experience__item">
+          <span class="experience__item__timelapse"> {{ xp.timelapse }} </span>
+
+          <div class="experience__item__body">
+            <span class="experience__item__label">
+              <h4 (click)="navigate(xp.url, 'black')">{{ xp.label }}</h4>
+              <ion-icon name="arrow-redo-outline"></ion-icon>
+            </span>
+
+            <span class="experience__item__rol main"> {{ xp.rol }} </span>
+            <span class="experience__item__rol secondary"> {{ xp.rol1 }} </span>
+            <span class="experience__item__rol tertiary"> {{ xp.rol2 }} </span>
+
+            <p class="experience__item__description">{{ xp.description }}</p>
+
+            <div class="experience__item__skills">
+              <span *ngFor="let skill of xp.skills" class="skill">
+                {{ skill }}</span
+              >
+            </div>
+          </div>
+        </article>
+
+        <span class="link"> Ver mas </span>
+      </section>
+
+      <section class="projects" id="projects">
+        <article *ngFor="let project of list.project" class="projects__item">
+          <span class="projects__item__image">
+            <img [src]="project.image" [alt]="project.label" />
+          </span>
+
+          <div class="projects__item__body">
+            <span class="projects__item__label">
+              <h4 (click)="navigate(project.url, 'black')">
+                {{ project.label }}
+              </h4>
+              <ion-icon name="arrow-redo-outline"></ion-icon>
+            </span>
+
+            <p class="projects__item__description">{{ project.description }}</p>
+
+            <div class="projects__item__requireds">
+              <span *ngFor="let required of project.requireds" class="required">
+                {{ required }}</span
+              >
+            </div>
+          </div>
+        </article>
+
+        <span class="link"> Ver mas </span>
+      </section>
+    </main>
+  </div>
 </div>
