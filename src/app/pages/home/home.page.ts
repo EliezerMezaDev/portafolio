@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { qualifications, projects } from '../../../assets/data';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
@@ -9,45 +11,8 @@ export class HomePage implements OnInit {
   navCurrent: String = '';
 
   list: any = {
-    experience: [
-      {
-        timelapse: '2021 - Presente',
-        url: 'https://www.grupospartan.com/',
-        label: 'Grupo Spartan S.A.',
-
-        rol: 'Desarrollador de Software',
-        rol1: 'Analista de sistemas',
-        rol2: '',
-
-        description:
-          'impedit molestias reprehenderit voluptate pariatur sint asperiores. Error iusto accusantium excepturi sapiente unde eos earum ullam! Cum,',
-        skills: ['Ionic', 'Angular', 'React', 'TypeScript', 'JavaScript'],
-      },
-
-      {
-        timelapse: '2019 - 2021',
-        url: '#',
-        label: 'BeeLetters C.A.',
-
-        rol: 'Desarrollador Frontent',
-        rol1: '',
-        rol2: '',
-
-        description:
-          'impedit molestias reprehenderit voluptate pariatur sint asperiores. Error iusto accusantium excepturi sapiente unde eos earum ullam! Cum,',
-        skills: ['Wordpress', 'CSS'],
-      },
-    ],
-    project: [
-      {
-        label: 'project_1',
-        description:
-          'impedit molestias reprehenderit voluptate pariatur sint asperiores.Error iusto accusantium excepturi sapient',
-        image: 'assets/img/auxiliar.png',
-        requireds: ['Ionic', 'Angular', 'TypeScript'],
-        url: '',
-      },
-    ],
+    qualifications,
+    projects,
   };
 
   constructor() {}
@@ -61,8 +26,8 @@ export class HomePage implements OnInit {
 
         const scrollTo_aboutMe: any =
           Number(document.getElementById('aboutMe')?.offsetTop) - 100;
-        const scrollTo_experience: any =
-          Number(document.getElementById('experience')?.offsetTop) - 100;
+        const scrollTo_qualification: any =
+          Number(document.getElementById('qualification')?.offsetTop) - 100;
         const scrollTo_projects: any =
           Number(document.getElementById('projects')?.offsetTop) - 100;
 
@@ -70,8 +35,8 @@ export class HomePage implements OnInit {
           this.navCurrent = 'aboutMe';
         }
 
-        if (currentScroll > scrollTo_experience) {
-          this.navCurrent = 'experience';
+        if (currentScroll > scrollTo_qualification) {
+          this.navCurrent = 'qualification';
         }
 
         if (currentScroll > scrollTo_projects) {

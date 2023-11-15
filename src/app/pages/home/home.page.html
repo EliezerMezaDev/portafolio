@@ -24,8 +24,8 @@
         </li>
         <li
           class="navigation__item"
-          [ngClass]="{current : navCurrent == 'experience'}"
-          (click)="changeNavCurrent('experience')"
+          [ngClass]="{current : navCurrent == 'qualification'}"
+          (click)="changeNavCurrent('qualification')"
         >
           experiencia
         </li>
@@ -67,23 +67,32 @@
         </p>
       </section>
 
-      <section class="experience" id="experience">
-        <article *ngFor="let xp of list.experience" class="experience__item">
-          <span class="experience__item__timelapse"> {{ xp.timelapse }} </span>
+      <section class="qualification" id="qualification">
+        <article
+          *ngFor="let xp of list.qualifications"
+          class="qualification__item"
+        >
+          <span class="qualification__item__timelapse">
+            {{ xp.timelapse }}
+          </span>
 
-          <div class="experience__item__body">
-            <span class="experience__item__label">
+          <div class="qualification__item__body">
+            <span class="qualification__item__label">
               <h4 (click)="navigate(xp.url, 'black')">{{ xp.label }}</h4>
               <ion-icon name="arrow-redo-outline"></ion-icon>
             </span>
 
-            <span class="experience__item__rol main"> {{ xp.rol }} </span>
-            <span class="experience__item__rol secondary"> {{ xp.rol1 }} </span>
-            <span class="experience__item__rol tertiary"> {{ xp.rol2 }} </span>
+            <span class="qualification__item__rol main"> {{ xp.rol }} </span>
+            <span class="qualification__item__rol secondary">
+              {{ xp.rol1 }}
+            </span>
+            <span class="qualification__item__rol tertiary">
+              {{ xp.rol2 }}
+            </span>
 
-            <p class="experience__item__description">{{ xp.description }}</p>
+            <p class="qualification__item__description">{{ xp.description }}</p>
 
-            <div class="experience__item__skills">
+            <div class="qualification__item__skills">
               <span *ngFor="let skill of xp.skills" class="skill">
                 {{ skill }}</span
               >
@@ -95,7 +104,7 @@
       </section>
 
       <section class="projects" id="projects">
-        <article *ngFor="let project of list.project" class="projects__item">
+        <article *ngFor="let project of list.projects" class="projects__item">
           <span class="projects__item__image">
             <img [src]="project.image" [alt]="project.label" />
           </span>

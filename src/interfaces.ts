@@ -1,4 +1,4 @@
-export interface experience {
+export interface qualification {
   timelapse: String;
   url: String;
   label: String;
