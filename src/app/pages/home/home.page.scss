@@ -1,8 +1,29 @@
+@import "../../../theme/functions.scss";
+
 .container-main {
   width: min(95%, 1200px);
 
   display: grid;
   grid-template-columns: 500px 1fr;
+
+  @include screenSize() {
+    grid-template-columns: 400px 1fr;
+  }
+
+  @include responsiveSize(1020px) {
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: var(--b-secondary-o40);
+    }
+
+    display: flex;
+    flex-direction: column;
+  }
 
   .info {
     position: relative;
@@ -10,13 +31,38 @@
     display: flex;
     flex-direction: column;
 
+    @include responsiveSize(1020px) {
+      flex-direction: row;
+    }
+
+    @include responsiveSize(700px) {
+      margin-bottom: 5rem;
+    }
+
     &__portrait {
       width: 500px;
       padding: 2rem 1rem 0 1rem;
 
+      @include screenSize() {
+        width: 400px;
+      }
+
+      @include responsiveSize(1020px) {
+        width: 300px;
+      }
+
+      @include responsiveSize(700px) {
+        display: none;
+      }
+
       img {
         width: 300px;
         height: 300px;
+
+        @include responsiveSize(1020px) {
+          width: 200px;
+          height: 200px;
+        }
 
         border: 2px solid var(--g-white-o40);
 
@@ -42,11 +88,19 @@
     &__text {
       padding: 1rem;
 
+      @include responsiveSize(1020px) {
+        padding-top: 2rem;
+      }
+
       h1 {
         font-size: 3rem;
         font-weight: 600;
 
         color: var(--g-white);
+
+        @include responsiveSize(1020px) {
+          font-size: 2.5rem;
+        }
       }
 
       h4 {
@@ -67,6 +121,16 @@
       bottom: 10px;
 
       display: flex;
+
+      @include responsiveSize(1020px) {
+        // display: none;
+        right: 2rem;
+        bottom: 0;
+      }
+
+      @include responsiveSize(700px) {
+        top: 2rem;
+      }
 
       &__item {
         width: 50px;
@@ -97,6 +161,10 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
+    @include responsiveSize(1020px) {
+      display: none;
+    }
 
     &__item {
       position: relative;
@@ -160,26 +228,41 @@
       background-color: var(--b-secondary-o40);
     }
 
+    @include responsiveSize(1020px) {
+      overflow: visible;
+    }
+
     .aboutMe,
-    .experience,
+    .qualification,
     .projects {
       min-height: 500px;
+
+      @include responsiveSize(1020px) {
+        padding-bottom: 5rem;
+        min-height: auto;
+      }
     }
 
     .aboutMe {
       padding-top: 5rem;
+
+      @include responsiveSize(1020px) {
+        padding-top: 2rem;
+      }
+
+      @include responsiveSize(700px) {
+        padding: 1rem 1rem 5rem 1rem;
+      }
 
       p {
         margin-bottom: 0.75rem;
 
         font-size: 1.25rem;
         color: var(--g-white-o40);
-
-        text-align: justify;
       }
     }
 
-    .experience {
+    .qualification {
       letter-spacing: 0.5px;
 
       display: flex;
@@ -200,9 +283,20 @@
         display: grid;
         grid-template-columns: 150px 1fr;
 
+        @include responsiveSize(500px) {
+          display: flex;
+          flex-direction: column;
+        }
+
         &__timelapse {
           font-size: 1rem;
           color: var(--g-white-o60);
+
+          @include responsiveSize(500px) {
+            margin-bottom: 0.5rem;
+
+            color: var(--g-white-o40);
+          }
         }
 
         &__label {
@@ -215,6 +309,10 @@
             color: var(--g-white);
 
             transition: 0.3s;
+
+            @include responsiveSize(500px) {
+              font-size: 1rem;
+            }
           }
 
           ion-icon {
@@ -229,6 +327,10 @@
 
         &__rol {
           color: var(--g-white-o60);
+
+          @include responsiveSize(500px) {
+            display: none;
+          }
 
           &.main {
             font-size: 0.85rem;
@@ -277,7 +379,7 @@
 
           background-color: var(--b-secondary-o40);
 
-          .experience__item {
+          .qualification__item {
             &__label {
               h4 {
                 color: var(--m-principal);
@@ -309,6 +411,11 @@
         display: grid;
         grid-template-columns: 150px 1fr;
 
+        @include responsiveSize(500px) {
+          display: flex;
+          flex-direction: column;
+        }
+
         &__image {
           font-size: 1rem;
           color: var(--g-white-o60);
@@ -321,6 +428,12 @@
             width: 90%;
 
             border-radius: 5px;
+
+            @include responsiveSize(500px) {
+              width: 100%;
+
+              margin-bottom: 1rem;
+            }
           }
         }
 
@@ -426,6 +539,10 @@
         &::before {
           width: 100%;
         }
+      }
+
+      @include responsiveSize(1020px) {
+        margin-right: 2rem;
       }
     }
   }

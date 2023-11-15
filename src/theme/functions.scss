@@ -1,0 +1,23 @@
+@mixin responsiveSize($width) {
+  @media only screen and (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin screenSize() {
+  @media only screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin tabletSize() {
+  @media only screen and (max-width: 900px) {
+    @content;
+  }
+}
+
+@mixin phoneSize() {
+  @media only screen and (max-width: 500px) {
+    @content;
+  }
+}
